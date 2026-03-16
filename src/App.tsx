@@ -93,7 +93,7 @@ const OptionGrid = ({
         }`}
       >
         <input type="radio" name={name} value={option} checked={value === option} onChange={onChange} className="hidden" />
-        <span className="text-sm font-medium">{option}</span>
+        <span className="block text-sm font-medium leading-snug break-words">{option}</span>
       </label>
     ))}
   </div>
@@ -198,14 +198,14 @@ const SurveyForm = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-8 mb-16 px-4">
-      <div className="mb-8 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-emerald-50 p-8 shadow-sm">
-        <div className="flex items-start gap-4">
-          <div className="rounded-2xl bg-blue-600 p-3 text-white"><Vote size={24} /></div>
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold text-gray-900">தேர்தல் விழிப்புணர்வு</h2>
-            <p className="mt-2 text-gray-600">தமிழ்நாட்டில் வாக்காளர்களுக்கு முக்கியமான விடயங்களை பகிர்ந்து, தொகுதி முன்னுரிமைகளை வெளிப்படுத்த உதவுங்கள்.</p>
+      <div className="mb-8 rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-emerald-50 p-5 sm:p-8 shadow-sm">
+        <div className="flex flex-col items-start gap-4 sm:flex-row">
+          <div className="rounded-2xl bg-blue-600 p-3 text-white shrink-0"><Vote size={24} /></div>
+          <div className="flex-1 min-w-0 w-full">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">தேர்தல் விழிப்புணர்வு</h2>
+            <p className="mt-2 text-base sm:text-lg text-gray-600 leading-relaxed">தமிழ்நாட்டில் வாக்காளர்களுக்கு முக்கியமான விடயங்களை பகிர்ந்து, தொகுதி முன்னுரிமைகளை வெளிப்படுத்த உதவுங்கள்.</p>
             <div className="mt-6">
-              <label className="text-base font-semibold text-gray-800 block mb-3">விரைவு கருத்துக்கணிப்பு: தமிழ்நாடு வாக்காளர்களுக்கு மிக முக்கியமான பிரச்சினை எது?</label>
+              <label className="text-base sm:text-lg font-semibold text-gray-800 block mb-3 leading-snug">விரைவு கருத்துக்கணிப்பு: தமிழ்நாடு வாக்காளர்களுக்கு மிக முக்கியமான பிரச்சினை எது?</label>
               <OptionGrid name="homepagePollIssue" value={formData.homepagePollIssue} options={homepagePollOptions} onChange={handleChange} columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-5" />
             </div>
           </div>
@@ -213,10 +213,10 @@ const SurveyForm = () => {
       </div>
 
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-        <div className="p-6 sm:p-10">
+        <div className="p-5 sm:p-10">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">தமிழ்நாடு வாக்காளர் கணக்கெடுப்பு</h2>
-            <p className="text-gray-500">கீழே நீங்கள் கேட்ட 10 தேர்தல் விழிப்புணர்வு கேள்விகள் இடம்பெற்றுள்ளன.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 leading-tight">தமிழ்நாடு வாக்காளர் கணக்கெடுப்பு</h2>
+            <p className="text-sm sm:text-base text-gray-500 leading-relaxed">கீழே நீங்கள் கேட்ட 10 தேர்தல் விழிப்புணர்வு கேள்விகள் இடம்பெற்றுள்ளன.</p>
           </div>
           {error && <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-xl flex items-start gap-3"><AlertCircle className="shrink-0 mt-0.5" size={18} /><p>{error}</p></div>}
 
